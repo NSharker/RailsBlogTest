@@ -5,7 +5,8 @@ class Article < ApplicationRecord
 
 	def self.search(search)
 		if search
-			self.where("name liike ?", "%#{search}%")
+			self.where("title like ?", "%#{search}%")
+			self.where("text like ?", "%#{search}%")
 		else
 			self.all
 		end
