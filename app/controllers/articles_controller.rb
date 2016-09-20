@@ -4,9 +4,9 @@ class ArticlesController < ApplicationController
 
 	def index
 		@articles = Article.all
-		def index
-		  @articles = Article.search(params[:search])
-		end
+		
+		@articles = Article.search(params[:search])
+
 	end
 
 	def show
