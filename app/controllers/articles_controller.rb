@@ -4,6 +4,9 @@ class ArticlesController < ApplicationController
 
 	def index
 		@articles = Article.all
+		def index
+		  @articles = Article.search(params[:search])
+		end
 	end
 
 	def show
@@ -44,6 +47,8 @@ class ArticlesController < ApplicationController
 
 		redirect_to articles_path
 	end
+
+
 
 	private
 	def article_params
